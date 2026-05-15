@@ -24,18 +24,24 @@ wget https://github.com/dibache/Zephyr-Binaries/raw/main/zephyr-v1.0.2-linux-amd
 unzip zephyr-v1.0.2-linux-amd64.zip
 cd zephyr-v1.0.2-linux-amd64
 chmod +x server client
-
-# ساختن فایل کانفیگ سرور
+```
+ساختن فایل کانفیگ سرور
+```
 nano server_config.json
-#محتوای زیر رو داخلش بچسبون
+```
+محتوای زیر رو داخلش بچسبون
+```
 {
   "google_folder_id": ""
 }
-#(با Ctrl+X و بعد Y و Enter ذخیره کن.)
-#آماده کردن فایل credentials.json
-# اجرای سرور برای دریافت توکن (فقط یک بار)
+```
+(با Ctrl+X و بعد Y و Enter ذخیره کن.)
+- آماده کردن فایل credentials.json
+- اجرای سرور برای دریافت توکن (فقط یک بار)
+```
 ./server -c server_config.json -gc credentials.json
-#لینکی که نمایش داده می‌شه رو در مرورگر باز کن.
+```
+لینکی که نمایش داده می‌شه رو در مرورگر باز کن.
 
 اجازه دسترسی به Drive رو بده.
 
@@ -44,11 +50,16 @@ nano server_config.json
 توی ترمینال پیست کن و Enter بزن.
 
 ✅ فایل .token ساخته می‌شه.
-#اجرای دائمی سرور در پس‌زمینه (با screen)
+اجرای دائمی سرور در پس‌زمینه (با screen)
+```
 screen -S zephyr
+```
+```
 ./server -c server_config.json -gc credentials.json
-# نصب و اجرا روی ویندوز
-#ساختن فایل کانفیگ کلاینت
+```
+ - نصب و اجرا روی ویندوز
+- ساختن فایل کانفیگ کلاینت
+```
 {
   "listen_addr": "127.0.0.1:1080",
   "storage_type": "google",
@@ -61,7 +72,10 @@ screen -S zephyr
     "HostHeader": "www.googleapis.com"
   }
 }
-#google_folder_id رو از سرور بگیری (بعد از اجرای اول، توی لاگ نشون میده).
-#آماده کردن credentials.json
-#اجرای کلاینت
+```
+google_folder_id رو از سرور بگیری (بعد از اجرای اول، توی لاگ نشون میده).
+آماده کردن credentials.json
+- اجرای کلاینت
+```
 zephyr-client.exe -c client_config.json -gc credentials.json
+```
